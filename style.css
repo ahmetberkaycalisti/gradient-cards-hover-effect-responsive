@@ -1,0 +1,134 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+.container { 
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card { 
+    width: 350px;
+    margin: 15px;
+    padding: 55px 30px;
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(108, 118, 134, 0.1);
+    z-index: 1;
+}
+
+.card::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137,#ff6a00);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.card:hover::before{
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.card .icon { 
+    color: #ff2c9c;
+    font-size: 45px;
+    transition: all 0.5s;
+}
+
+.card h3 { 
+    margin: 15px 0;
+    color: #000000;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: 'Saira', sans-serif;
+    text-transform: capitalize;
+    transition: all 0.5s;
+
+}
+
+.card p { 
+    margin-bottom: 25px;
+    transition: all 0.5s;
+}
+
+.read-more-btn {
+    display: inline-block;
+    position: relative;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+.card:hover .icon,
+.card:hover h3,
+.card:hover p,
+.card:hover .read-more-btn
+{ 
+    color: #ffffff;
+}
+
+.read-more-btn::before { 
+    content: "";
+    position: absolute;
+    top: 68%;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #000000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.read-more-btn:hover::before { 
+    left: 40px;
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.card .back-text { 
+    margin: 0 auto;
+    color: #010101;
+    font-size: 200px;
+    font-weight: 700;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.04;
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.card:hover .back-text { 
+    opacity: 0.1;
+}
